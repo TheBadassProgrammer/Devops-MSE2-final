@@ -1,0 +1,124 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Apr 24 08:29:48 UTC 2026
+
+  System load:  1.84               Processes:             55
+  Usage of /:   0.7% of 250.92GB   Users logged in:       0
+  Memory usage: 9%                 IPv4 address for eth0: 172.19.102.61
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/nitin/.hushlogin file.
+nitin@LAPTOP-U39SH27E:~$ whoami
+nitin
+nitin@LAPTOP-U39SH27E:~$ w
+ 08:39:27 up 9 min,  1 user,  load average: 0.00, 0.04, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+nitin    pts/1    -                08:29    9:39   0.04s  0.03s -bash
+nitin@LAPTOP-U39SH27E:~$ last
+reboot   system boot  6.6.87.2-microso Fri Apr 24 08:29   still running
+reboot   system boot  6.6.87.2-microso Sat Apr  4 10:12   still running
+reboot   system boot  6.6.87.2-microso Fri Mar 27 10:28   still running
+reboot   system boot  6.6.87.2-microso Fri Mar 27 10:15 - 10:25  (00:09)
+reboot   system boot  6.6.87.2-microso Mon Mar 16 10:10 - 10:25 (11+00:15)
+reboot   system boot  6.6.87.2-microso Fri Feb 27 08:37 - 08:38  (00:00)
+
+wtmp begins Fri Feb 27 08:37:43 2026
+nitin@LAPTOP-U39SH27E:~$ uname -a
+Linux LAPTOP-U39SH27E 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+nitin@LAPTOP-U39SH27E:~$ hostname
+LAPTOP-U39SH27E
+nitin@LAPTOP-U39SH27E:~$ uptime
+ 08:40:24 up 10 min,  1 user,  load average: 0.00, 0.03, 0.04
+nitin@LAPTOP-U39SH27E:~$ sudo groupadd developers
+[sudo] password for nitin:
+groupadd: group 'developers' already exists
+nitin@LAPTOP-U39SH27E:~$ sudo groupadd qa
+groupadd: group 'qa' already exists
+nitin@LAPTOP-U39SH27E:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,nitin
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:nitin
+fax:x:21:
+voice:x:22:
+cdrom:x:24:nitin
+floppy:x:25:nitin
+tape:x:26:
+sudo:x:27:nitin
+audio:x:29:nitin
+dip:x:30:nitin
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:nitin
+sasl:x:45:
+plugdev:x:46:nitin
+staff:x:50:
+games:x:60:
+users:x:100:nitin
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+_ssh:x:104:
+landscape:x:105:
+polkitd:x:990:
+admin:x:106:
+netdev:x:107:nitin
+nitin:x:1000:
+developers:x:1001:aman
+qa:x:1002:karan
+aman:x:1003:
+karan:x:1005:
+docker:x:1004:nitin
+nitin@LAPTOP-U39SH27E:~$ sudo useradd -m -g developers aman
+useradd: user 'aman' already exists
+nitin@LAPTOP-U39SH27E:~$ sudo useradd -m -g developers ritu
+nitin@LAPTOP-U39SH27E:~$ sudo useradd -m -g qa karan
+useradd: user 'karan' already exists
+nitin@LAPTOP-U39SH27E:~$ id aman
+uid=1001(aman) gid=1003(aman) groups=1003(aman),1001(developers)
+nitin@LAPTOP-U39SH27E:~$ id karan
+uid=1003(karan) gid=1005(karan) groups=1005(karan),1002(qa)
+nitin@LAPTOP-U39SH27E:~$ who
+nitin    pts/1        2026-04-24 08:29
+nitin@LAPTOP-U39SH27E:~$ sudo userdel -r ritu
+userdel: ritu mail spool (/var/mail/ritu) not found
+nitin@LAPTOP-U39SH27E:~$ id ritu
+id: ‘ritu’: no such user
+nitin@LAPTOP-U39SH27E:~$
