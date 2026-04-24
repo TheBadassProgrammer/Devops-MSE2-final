@@ -23,10 +23,5 @@ jobs:
           cd TestCase3/nodejs-api
           npm install
 
-      - name: Build Docker Image
-        run: |
-          cd TestCase3/nodejs-api
-          docker build -t nodejs-api .
-
       - name: Deploy Step
         run: echo "Deploying application to server..."
