@@ -19,10 +19,14 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          cd TestCase3/nodejs-api
+          npm install
 
       - name: Build Docker Image
-        run: docker build -t nodejs-api .
+        run: |
+          cd TestCase3/nodejs-api
+          docker build -t nodejs-api .
 
       - name: Deploy Step
         run: echo "Deploying application to server..."
